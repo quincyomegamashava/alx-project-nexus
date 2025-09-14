@@ -3,7 +3,9 @@
 ## Overview
 This repository documents my journey and learnings from the ProDev Frontend Engineering program.  
 It also includes the planning and documentation for my final project:  
-A Web + Mobile App that allows users to upload PDF books, chat with the content, and generate podcasts for book groups.
+A Web + Mobile App 
+## Overview
+This case study focuses on creating a dynamic social media feed interface that allows users to engage with posts in real-time. The project emphasizes: - API integration with GraphQL for efficient data fetching. - Enhancing user interaction through intuitive features. - Creating a responsive and visually appealing layout for a real-world application.
 
 ---
 
