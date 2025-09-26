@@ -1,66 +1,86 @@
 # ALX Project Nexus 📚
 
 ## Overview
-This repository documents my journey and learnings from the ProDev Frontend Engineering program.  
+This repository documents my journey and learnings from the **ProDev Frontend Engineering program**.  
 It also includes the planning and documentation for my final project:  
-A Web + Mobile App 
+A **Dynamic E-Commerce Product Catalog (Web, Mobile, or PWA)**
+
 ## Overview
-This case study focuses on creating a dynamic social media feed interface that allows users to engage with posts in real-time. The project emphasizes: - API integration with GraphQL for efficient data fetching. - Enhancing user interaction through intuitive features. - Creating a responsive and visually appealing layout for a real-world application.
+This case study focuses on building a scalable and user-friendly **e-commerce product catalog** where users can browse, filter, and sort products seamlessly.  
+The project emphasizes:  
+- **API integration** for dynamic product data.  
+- **Optimizing performance** with pagination & infinite scrolling.  
+- **Responsive, accessible UI** for diverse devices.  
 
 ---
 
 ## 🚀 Major Learnings
 
 ### 🔑 Key Technologies
-- **Web Development**: Next.js, React, TailwindCSS, TypeScript
-- **Mobile Development**: React Native, Expo
-- **PWA**: Service Workers, Offline caching
-- **APIs & Integration**: REST APIs, GraphQL, OpenAI API
-- **System Design & Analysis**: Authentication flows, real-time communication, storage & retrieval
-- **Version Control**: Git & GitHub collaboration
+- **Web Development**: React, TailwindCSS, TypeScript  
+- **Mobile Development**: React Native, Expo  
+- **PWA**: Service Workers, Offline caching  
+- **APIs & Integration**: REST APIs  
+- **State Management**: Redux  
+- **Version Control**: Git & GitHub collaboration  
 
 ---
 
 ### 📘 Important Frontend Concepts
-- **Next.js** for SSR & routing
-- **TailwindCSS** for utility-first responsive design
-- **TypeScript** for strongly-typed scalable apps
-- **State Management** with React Query / Context
-- **API Integration** (REST & GraphQL)
+- **React** for component-driven UIs  
+- **TailwindCSS** for modern, responsive styling  
+- **TypeScript** for type safety & maintainability  
+- **Redux** for predictable state management  
+- **API Integration** for real-world dynamic data  
+- **Pagination & Infinite Scrolling** for performance optimization  
 
 ---
 
 ### ⚡ Challenges & Solutions
-- **Challenge**: Handling large PDF uploads  
-  **Solution**: Use backend chunking + embeddings to process efficiently  
+- **Challenge**: Handling large datasets without performance issues  
+  **Solution**: Implemented pagination & infinite scrolling to optimize rendering.  
 
-- **Challenge**: Making chat responses relevant  
-  **Solution**: Implement vector database search before querying LLM  
+- **Challenge**: Ensuring accessibility across devices  
+  **Solution**: Built a fully responsive layout with TailwindCSS.  
 
-- **Challenge**: Syncing web + mobile features  
-  **Solution**: Shared business logic with TypeScript + reusable APIs  
+- **Challenge**: Managing complex product filtering logic  
+  **Solution**: Used Redux for centralized state management and modular filtering.  
 
 ---
 
 ### 🏆 Best Practices & Takeaways
-- Modular component design for scalability
-- Writing clean, reusable code with TypeScript
-- Collaborating effectively with backend engineers
-- Documenting processes to improve team onboarding
-- Testing features incrementally before full deployment
+- Adopted a **clean Git workflow** with descriptive commits  
+- Designed **modular, reusable components** for scalability  
+- Documented processes for easier onboarding  
+- Used **TypeScript interfaces** for maintainable, error-free code  
+- Focused on **UX-driven design** to improve product discoverability  
 
 ---
 
 ## 👥 Collaboration
-- **Frontend Peers**: Pair-programming, UI/UX feedback, code reviews  
-- **Backend Learners**: API design, database models, vector search integration  
+- **Frontend Peers**: Code reviews, UI/UX testing, pair-programming  
+- **Backend Peers**: API integration, error handling, and performance discussions  
 
 ---
 
 ## 📂 Repository Content
-- `/docs` → Documentation of system design, wireframes, API contracts  
-- `/frontend` → Web app (Next.js + TailwindCSS + TS)  
-- `/mobile` → Mobile app (React Native + Expo)  
+- `/docs` → System design, wireframes, API documentation  
+- `/frontend` → React app with TailwindCSS & TypeScript  
+- `/mobile` → React Native + Expo implementation  
 - `/notes` → Learnings & reflections from the ProDev program  
 
 ---
+
+## 🛠️ Getting Started
+
+### 📌 Prerequisites
+Make sure you have the following installed:
+- **Node.js** (v16 or later)  
+- **npm** or **yarn**  
+- **Git**  
+
+### 🔽 Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/project-nexus.git
+   cd project-nexus/frontend

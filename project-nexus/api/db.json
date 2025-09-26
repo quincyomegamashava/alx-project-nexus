@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "title": "Leather Jacket", "price": 120, "category": "Clothing", "image": "jacket.jpeg", "rating": 4.5, "description": "Premium leather jacket with modern fit" },
+    { "id": 2, "title": "Running Shoes", "price": 80, "category": "Shoes", "image": "shoes.jpeg", "rating": 4.2, "description": "Comfortable running shoes for daily workouts" },
+    { "id": 3, "title": "Wireless Headphones", "price": 150, "category": "Electronics", "image": "headphones.jpeg", "rating": 4.8, "description": "Noise-cancelling wireless headphones" },
+    { "id": 4, "title": "Denim Jeans", "price": 60, "category": "Clothing", "image": "jeans.jpeg", "rating": 4.0, "description": "Classic fit denim jeans" },
+    { "id": 5, "title": "Smartphone", "price": 699, "category": "Electronics", "image": "phone.jpeg", "rating": 4.7, "description": "Latest smartphone with advanced features" },
+    { "id": 6, "title": "Sneakers", "price": 95, "category": "Shoes", "image": "sneakers.jpeg", "rating": 4.3, "description": "Stylish casual sneakers for everyday wear" }
+  ]
+}
