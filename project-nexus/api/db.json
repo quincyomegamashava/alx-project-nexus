@@ -1,10 +1,69 @@
 {
   "products": [
-    { "id": 1, "title": "Leather Jacket", "price": 120, "category": "Clothing", "image": "jacket.jpeg", "rating": 4.5, "description": "Premium leather jacket with modern fit" },
-    { "id": 2, "title": "Running Shoes", "price": 80, "category": "Shoes", "image": "shoes.jpeg", "rating": 4.2, "description": "Comfortable running shoes for daily workouts" },
-    { "id": 3, "title": "Wireless Headphones", "price": 150, "category": "Electronics", "image": "headphones.jpeg", "rating": 4.8, "description": "Noise-cancelling wireless headphones" },
-    { "id": 4, "title": "Denim Jeans", "price": 60, "category": "Clothing", "image": "jeans.jpeg", "rating": 4.0, "description": "Classic fit denim jeans" },
-    { "id": 5, "title": "Smartphone", "price": 699, "category": "Electronics", "image": "phone.jpeg", "rating": 4.7, "description": "Latest smartphone with advanced features" },
-    { "id": 6, "title": "Sneakers", "price": 95, "category": "Shoes", "image": "sneakers.jpeg", "rating": 4.3, "description": "Stylish casual sneakers for everyday wear" }
+    { "id": 1, "title": "Leather Jacket", "price": 120, "category": "Clothing", "image": "/images/jacket.jpeg", "rating": 4.5, "description": "Premium leather jacket with modern fit", "sellerId": 1, "stock": 10 },
+    { "id": 2, "title": "Running Shoes", "price": 80, "category": "Shoes", "image": "/images/shoes.jpeg", "rating": 4.2, "description": "Comfortable running shoes for daily workouts", "sellerId": 2, "stock": 15 },
+    { "id": 3, "title": "Wireless Headphones", "price": 150, "category": "Electronics", "image": "/images/headphones.jpeg", "rating": 4.8, "description": "Noise-cancelling wireless headphones", "sellerId": 1, "stock": 8 },
+    { "id": 4, "title": "Denim Jeans", "price": 60, "category": "Clothing", "image": "/images/jeans.jpeg", "rating": 4.0, "description": "Classic fit denim jeans", "sellerId": 3, "stock": 20 },
+    { "id": 5, "title": "Smartphone", "price": 699, "category": "Electronics", "image": "/images/phone.jpeg", "rating": 4.7, "description": "Latest smartphone with advanced features", "sellerId": 2, "stock": 5 },
+    { "id": 6, "title": "Sneakers", "price": 95, "category": "Shoes", "image": "/images/sneakers.jpeg", "rating": 4.3, "description": "Stylish casual sneakers for everyday wear", "sellerId": 3, "stock": 12 }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "john.seller@example.com",
+      "password": "password123",
+      "name": "John Seller",
+      "role": "seller",
+      "avatar": "/images/avatar1.png",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "phone": "+1234567890",
+      "address": "123 Seller St, Commerce City"
+    },
+    {
+      "id": 2,
+      "email": "jane.buyer@example.com",
+      "password": "password123",
+      "name": "Jane Buyer",
+      "role": "buyer",
+      "avatar": "/images/avatar2.png",
+      "createdAt": "2024-01-20T14:15:00Z",
+      "phone": "+1234567891",
+      "address": "456 Buyer Ave, Shopping Town"
+    },
+    {
+      "id": 3,
+      "email": "mike.both@example.com",
+      "password": "password123",
+      "name": "Mike Both",
+      "role": "seller",
+      "avatar": "/images/avatar3.png",
+      "createdAt": "2024-01-25T09:45:00Z",
+      "phone": "+1234567892",
+      "address": "789 Market Blvd, Trade Center"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "items": [
+        { "productId": 1, "quantity": 1, "addedAt": "2024-01-26T10:00:00Z" },
+        { "productId": 3, "quantity": 2, "addedAt": "2024-01-26T10:15:00Z" }
+      ],
+      "updatedAt": "2024-01-26T10:15:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "items": [
+        { "productId": 2, "quantity": 1, "price": 80 }
+      ],
+      "total": 80,
+      "status": "completed",
+      "createdAt": "2024-01-20T16:30:00Z",
+      "shippingAddress": "456 Buyer Ave, Shopping Town"
+    }
   ]
 }

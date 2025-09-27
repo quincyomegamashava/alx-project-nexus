@@ -84,3 +84,48 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/project-nexus.git
    cd project-nexus/frontend
+
+
+
+# Stop current server
+pkill -f "node server.js"
+
+# Start the enhanced server
+./start-auth-server.sh
+
+
+## (BELOW WORKS BUT NOT RECOMMENDED)
+# Stop current server
+pkill -f "node server.js"
+
+# Start basic JSON server on port 4000
+./start-api.sh
+
+# Start enhanced server on port 4001 
+cd api && PORT=4001 node server.js
+
+
+
+## OR 
+
+
+
+## Run both apps
+
+## In two terminals:
+
+## Terminal 1 (API):
+
+npm run start:api
+
+
+## Terminal 2 (Web):
+
+cd frontend
+npm run dev
+
+
+## Terminal 3 (Mobile):
+
+cd mobile
+npm start

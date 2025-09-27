@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import type { Product } from '../../../shared/types/product';
+import type { Product } from '../types/product';
+import { getMobileImageUrl } from '../utils/imageUrl';
 
 interface ProductCardProps {
   product: Product;
@@ -25,7 +26,7 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
       <Image
-        source={{ uri: `https://via.placeholder.com/200x150?text=${product.title}` }}
+        source={{ uri: getMobileImageUrl(product.image) }}
         style={styles.image}
         resizeMode="cover"
       />
@@ -65,18 +66,20 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#ffffff',
-    borderRadius: 12,
+    borderRadius: 16,
     marginHorizontal: 16,
     marginVertical: 8,
-    shadowColor: '#000',
+    shadowColor: '#4f46e5',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 4,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowRadius: 8,
+    elevation: 6,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e0e7ff',
   },
   image: {
     width: '100%',
@@ -95,13 +98,13 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontWeight: '600',
-    color: '#1f2937',
+    color: '#1e1b4b',
     marginRight: 12,
   },
   price: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#2563eb',
+    color: '#4f46e5',
   },
   footer: {
     flexDirection: 'row',
@@ -110,15 +113,15 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   categoryContainer: {
-    backgroundColor: '#f3f4f6',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
+    backgroundColor: '#eef2ff',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
   },
   category: {
     fontSize: 12,
-    color: '#6b7280',
-    fontWeight: '500',
+    color: '#4338ca',
+    fontWeight: '600',
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -126,11 +129,12 @@ const styles = StyleSheet.create({
   },
   rating: {
     fontSize: 12,
-    color: '#6b7280',
+    color: '#4f46e5',
+    fontWeight: '500',
   },
   description: {
     fontSize: 14,
-    color: '#6b7280',
+    color: '#64748b',
     lineHeight: 20,
   },
 });

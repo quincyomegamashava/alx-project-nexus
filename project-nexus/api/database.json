@@ -1,0 +1,218 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john.seller@example.com",
+      "password": "$2a$10$K9H7pLt.CYuETTeX3OLdsOHlIAIT2Vas24cmPaYjiyEHNQB93epLq",
+      "name": "John Seller",
+      "role": "seller",
+      "avatar": "/images/avatar1.png",
+      "createdAt": "2025-09-27T05:12:49.699Z",
+      "phone": "+1234567890",
+      "address": "123 Seller St, Commerce City"
+    },
+    {
+      "id": 2,
+      "email": "jane.buyer@example.com",
+      "password": "$2a$10$kNP/twM.BgW7L0RyUvX7PuGxkqObv9D7rg69hXMn8enAKRv615QUO",
+      "name": "Jane Buyer",
+      "role": "buyer",
+      "avatar": "/images/avatar2.png",
+      "createdAt": "2025-09-27T05:12:49.951Z",
+      "phone": "+1234567891",
+      "address": "456 Buyer Ave, Shopping Town"
+    },
+    {
+      "id": 3,
+      "email": "testuser@example.com",
+      "password": "$2a$10$9QP5hn.iuM4xoPwRbyeXx.22X6IMqOnUJUy7GRB9UQdB2Jz6wj0o2",
+      "name": "Test User",
+      "role": "buyer",
+      "phone": "",
+      "address": "",
+      "avatar": "/images/avatar3.png",
+      "createdAt": "2025-09-27T05:13:17.853Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Leather Jacket",
+      "price": 120,
+      "category": "Clothing",
+      "image": "/images/jacket.jpeg",
+      "rating": 4.5,
+      "description": "Premium leather jacket with modern fit",
+      "sellerId": 1,
+      "stock": 4
+    },
+    {
+      "id": 2,
+      "title": "Running Shoes",
+      "price": 80,
+      "category": "Shoes",
+      "image": "/images/shoes.jpeg",
+      "rating": 4.2,
+      "description": "Comfortable running shoes for daily workouts",
+      "sellerId": 2,
+      "stock": 12
+    },
+    {
+      "id": 3,
+      "title": "Wireless Headphones",
+      "price": 150,
+      "category": "Electronics",
+      "image": "/images/headphones.jpeg",
+      "rating": 4.8,
+      "description": "Noise-cancelling wireless headphones",
+      "sellerId": 1,
+      "stock": 8
+    },
+    {
+      "id": 4,
+      "title": "Denim Jeans",
+      "price": 60,
+      "category": "Clothing",
+      "image": "/images/jeans.jpeg",
+      "rating": 4,
+      "description": "Classic fit denim jeans",
+      "sellerId": 1,
+      "stock": 20
+    },
+    {
+      "id": 5,
+      "title": "Smartphone",
+      "price": 699,
+      "category": "Electronics",
+      "image": "/images/phone.jpeg",
+      "rating": 4.7,
+      "description": "Latest smartphone with advanced features",
+      "sellerId": 2,
+      "stock": 5
+    },
+    {
+      "id": 6,
+      "title": "Sneakers",
+      "price": 95,
+      "category": "Shoes",
+      "image": "/images/sneakers.jpeg",
+      "rating": 4.3,
+      "description": "Stylish casual sneakers for everyday wear",
+      "sellerId": 1,
+      "stock": 12
+    }
+  ],
+  "carts": [],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 4,
+          "price": 120,
+          "title": "Leather Jacket"
+        }
+      ],
+      "totalAmount": 480,
+      "status": "pending",
+      "shippingAddress": {
+        "fullName": "Jane Buyer",
+        "address": "456 Buyer Ave, Shopping Town",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "phone": "+1234567891"
+      },
+      "paymentMethod": "cash_on_delivery",
+      "createdAt": "2025-09-27T08:59:21.095Z",
+      "updatedAt": "2025-09-27T08:59:21.095Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 2,
+          "price": 80,
+          "title": "Running Shoes"
+        }
+      ],
+      "totalAmount": 160,
+      "status": "pending",
+      "shippingAddress": {
+        "fullName": "Jane Buyer",
+        "address": "456 Buyer Ave, Shopping Town",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "phone": "+1234567891"
+      },
+      "paymentMethod": "cash_on_delivery",
+      "createdAt": "2025-09-27T09:01:23.566Z",
+      "updatedAt": "2025-09-27T09:01:23.566Z"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 120,
+          "title": "Leather Jacket"
+        },
+        {
+          "productId": 2,
+          "quantity": 1,
+          "price": 80,
+          "title": "Running Shoes"
+        }
+      ],
+      "totalAmount": 216,
+      "status": "pending",
+      "shippingAddress": {
+        "fullName": "Jane Buyer",
+        "address": "456 Buyer Ave, Shopping Town",
+        "city": "Harare",
+        "state": "aMERICA",
+        "zipCode": "0000",
+        "phone": "+1234567891"
+      },
+      "paymentMethod": "cash_on_delivery",
+      "createdAt": "2025-09-27T10:28:45.017Z",
+      "updatedAt": "2025-09-27T10:28:45.017Z"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 120,
+          "title": "Leather Jacket"
+        }
+      ],
+      "totalAmount": 129.6,
+      "status": "pending",
+      "shippingAddress": {
+        "fullName": "Jane Buyer",
+        "address": "456 Buyer Ave, Shopping Town",
+        "city": "LA",
+        "state": "America ",
+        "zipCode": "0000",
+        "phone": "+1234567891"
+      },
+      "paymentMethod": "cash_on_delivery",
+      "createdAt": "2025-09-27T10:49:54.524Z",
+      "updatedAt": "2025-09-27T10:49:54.524Z"
+    }
+  ],
+  "nextUserId": 4,
+  "nextProductId": 7,
+  "nextCartId": 1,
+  "nextOrderId": 5
+}

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { Product } from '../../../../shared/types/product';
+import type { Product } from '../../types/product';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
@@ -39,12 +39,12 @@ export const productsApi = createApi({
           params.append('_order', sortOrder || 'asc');
         }
         
-        return `products?${params.toString()}`;
+        return `api/products?${params.toString()}`;
       },
       providesTags: ['Product'],
     }),
     getProduct: builder.query<Product, number>({
-      query: (id) => `products/${id}`,
+      query: (id) => `api/products/${id}`,
       providesTags: (result, error, id) => [{ type: 'Product', id }],
     }),
   }),

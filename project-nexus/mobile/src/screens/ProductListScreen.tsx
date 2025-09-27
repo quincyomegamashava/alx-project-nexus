@@ -11,9 +11,9 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../store';
 import { loadProducts } from '../store/slices/productsSlice';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCardWithAuth } from '../components/ProductCardWithAuth';
 import { FilterBar } from '../components/FilterBar';
-import type { Product } from '../../../shared/types/product';
+import type { Product } from '../types/product';
 
 export function ProductListScreen() {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,6 +22,7 @@ export function ProductListScreen() {
   );
   const loading = status === 'loading';
   const [refreshing, setRefreshing] = useState(false);
+  const [currentFilters, setCurrentFilters] = useState({});
 
   useEffect(() => {
     dispatch(loadProducts());
@@ -29,7 +30,7 @@ export function ProductListScreen() {
 
   const handleRefresh = async () => {
     setRefreshing(true);
-    await dispatch(loadProducts());
+    await dispatch(loadProducts(currentFilters));
     setRefreshing(false);
   };
 
@@ -42,12 +43,13 @@ export function ProductListScreen() {
   };
 
   const handleFilterChange = (newFilters: any) => {
-    // For now, just reload products - can be enhanced later
-    dispatch(loadProducts());
+    const updatedFilters = { ...currentFilters, ...newFilters };
+    setCurrentFilters(updatedFilters);
+    dispatch(loadProducts(updatedFilters));
   };
 
   const renderProduct = ({ item }: { item: Product }) => (
-    <ProductCard product={item} onPress={() => handleProductPress(item)} />
+    <ProductCardWithAuth product={item} onPress={() => handleProductPress(item)} />
   );
 
 
@@ -90,12 +92,12 @@ export function ProductListScreen() {
         renderItem={renderProduct}
         keyExtractor={(item) => item.id.toString()}
         refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={handleRefresh}
-            colors={['#2563eb']}
-            tintColor="#2563eb"
-          />
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={handleRefresh}
+          colors={['#4f46e5']}
+          tintColor="#4f46e5"
+        />
         }
         ListEmptyComponent={renderEmptyComponent}
         showsVerticalScrollIndicator={false}
@@ -108,7 +110,7 @@ export function ProductListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#fafbff',
   },
   centered: {
     flex: 1,
@@ -140,12 +142,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 32,
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#fafbff',
   },
   errorTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#dc2626',
+    color: '#ef4444',
     marginBottom: 8,
   },
   errorMessage: {

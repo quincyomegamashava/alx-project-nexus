@@ -1,20 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  image: string;
-  rating?: number;
-  description?: string;
-}
+import type { Product } from '../../types/product';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 async function fetchProducts(page = 1, limit = 20): Promise<Product[]> {
-  const res = await axios.get<Product[]>(`${API_URL}/products`, {
+  const res = await axios.get<Product[]>(`${API_URL}/api/products`, {
     params: { _page: page, _limit: limit },
   });
   return res.data;

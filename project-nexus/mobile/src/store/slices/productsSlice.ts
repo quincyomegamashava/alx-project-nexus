@@ -1,28 +1,39 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import type { Product } from '../../types/product';
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  image: string;
-  rating?: number;
-  description?: string;
+const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.103.80:4000";
+
+interface FilterOptions {
+  category?: string;
+  sortBy?: string;
+  sortOrder?: 'asc' | 'desc';
+  page?: number;
+  limit?: number;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
-
-async function fetchProducts(page = 1, limit = 20): Promise<Product[]> {
-  const res = await axios.get<Product[]>(`${API_URL}/products`, {
-    params: { _page: page, _limit: limit },
-  });
+async function fetchProducts(options: FilterOptions = {}): Promise<Product[]> {
+  const { category, sortBy, sortOrder, page = 1, limit = 20 } = options;
+  const params: any = { _page: page, _limit: limit };
+  
+  if (category && category !== 'All') {
+    params.category = category;
+  }
+  if (sortBy) {
+    params._sort = sortBy;
+    params._order = sortOrder || 'asc';
+  }
+  
+  const res = await axios.get<Product[]>(`${API_URL}/api/products`, { params });
   return res.data;
 }
 
-export const loadProducts = createAsyncThunk("products/load", async () => {
-  return await fetchProducts();
-});
+export const loadProducts = createAsyncThunk(
+  "products/load", 
+  async (filters: FilterOptions = {}) => {
+    return await fetchProducts(filters);
+  }
+);
 
 const productsSlice = createSlice({
   name: "products",

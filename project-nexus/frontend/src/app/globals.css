@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Indigo Theme Colors */
+  --color-primary: #4f46e5;
+  --color-primary-light: #6366f1;
+  --color-primary-dark: #4338ca;
+  --color-primary-darker: #3730a3;
+  
+  --background: #fafbff;
+  --background-secondary: #f1f5f9;
+  --background-card: #ffffff;
+  
+  --foreground: #1e1b4b;
+  --foreground-secondary: #64748b;
+  --foreground-tertiary: #94a3b8;
+  
+  --border: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-accent: #6366f1;
+  
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f0f23;
+    --background-secondary: #1e1b4b;
+    --background-card: #312e81;
+    --foreground: #e0e7ff;
+    --foreground-secondary: #c7d2fe;
+    --border: #475569;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
