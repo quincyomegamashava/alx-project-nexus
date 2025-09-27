@@ -140,7 +140,7 @@ export default function OrdersScreen() {
                   {item.title}
                 </Text>
                 <Text style={styles.itemQuantity}>×{item.quantity}</Text>
-                <Text style={styles.itemPrice}>${item.price.toFixed(2)}</Text>
+                <Text style={styles.itemPrice}>${(item.price || 0).toFixed(2)}</Text>
               </View>
             ))}
             {order.items.length > 2 && (
@@ -153,7 +153,7 @@ export default function OrdersScreen() {
           {/* Order Total */}
           <View style={styles.orderFooter}>
             <Text style={styles.totalLabel}>Total</Text>
-            <Text style={styles.totalAmount}>${order.total.toFixed(2)}</Text>
+            <Text style={styles.totalAmount}>${(order.total || 0).toFixed(2)}</Text>
           </View>
 
           {/* Track Order Button */}
