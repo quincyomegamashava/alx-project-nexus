@@ -87,6 +87,9 @@ Make sure you have the following installed:
 
 
 
+
+
+
 # Stop current server
 pkill -f "node server.js"
 
