@@ -1,0 +1,14 @@
+[variables]
+NODE_VERSION = "18"
+
+[phases.setup]
+nixPkgs = ["nodejs", "npm"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["npm run build || echo 'No build step defined'"]
+
+[start]
+cmd = "npm start"

@@ -1,0 +1,11 @@
+{
+  "build": {
+    "commands": [
+      "npm install"
+    ]
+  },
+  "deploy": {
+    "startCommand": "node server.js",
+    "healthcheckPath": "/api/products"
+  }
+}
