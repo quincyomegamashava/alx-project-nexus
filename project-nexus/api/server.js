@@ -24,6 +24,15 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-key-change-this-
 app.use(helmet());
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
+
+// Custom middleware for image CORS headers
+app.use('/images', (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  res.setHeader('Cache-Control', 'public, max-age=86400'); // Cache for 24 hours
+  next();
+});
+
 app.use(express.static('public'));
 
 // Rate limiting

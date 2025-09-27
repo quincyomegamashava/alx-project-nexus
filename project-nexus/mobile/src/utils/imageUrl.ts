@@ -10,7 +10,7 @@ export function getMobileImageUrl(imagePath: string): string {
     return imagePath;
   }
   
-  const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://192.168.103.80:4000';
+  const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://alx-project-nexus-production-4427.up.railway.app';
   
   // Remove leading slash if present to avoid double slashes
   const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;

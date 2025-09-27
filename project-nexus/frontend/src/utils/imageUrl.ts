@@ -20,7 +20,7 @@ export function getImageUrl(imagePath: string): string {
   }
   
   // For API-served images, try the backend first
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alx-project-nexus-production-4427.up.railway.app';
   
   // Remove leading slash if present to avoid double slashes
   const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
