@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type { Product } from '../../types/product';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.103.80:4000";
+const API_URL = process.env.EXPO_PUBLIC_API_URL || "https://alx-project-nexus-production-4427.up.railway.app";
 
 interface FilterOptions {
   category?: string;

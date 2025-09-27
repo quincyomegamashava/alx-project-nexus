@@ -77,7 +77,7 @@ export function ProductListScreen() {
         <Text style={styles.errorTitle}>Error loading products</Text>
         <Text style={styles.errorMessage}>{error}</Text>
         <Text style={styles.errorSubtext}>
-          Make sure the API server is running on port 4000
+          Check your internet connection and try again
         </Text>
       </View>
     );

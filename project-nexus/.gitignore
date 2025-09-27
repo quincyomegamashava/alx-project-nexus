@@ -219,3 +219,6 @@ coverage/
 # JSON Server database backup
 db-backup.json
 .vercel
+
+# Expo
+.expo/

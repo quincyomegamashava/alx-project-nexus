@@ -71,7 +71,7 @@ function ProfileContent() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://192.168.103.80:4000/api/auth/profile', {
+      const response = await fetch('https://alx-project-nexus-production-4427.up.railway.app/api/auth/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
